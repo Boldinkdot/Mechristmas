@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>솔크메크</title>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --plum: #3B1D5E;
+    --plum-deep: #1E0F33;
+    --violet: #8A5CD0;
+    --lilac: #EDE3FB;
+    --pop: #FFD23F;
+    --white: #FFFFFF;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body, body * { font-weight: 700 !important; }
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    color: var(--white);
+    background: var(--plum);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    max-width: 1350px;
+    margin: 0 auto;
+  }
+  html { background: var(--plum-deep); }
+  .display { font-family: 'Bungee', 'Noto Sans KR', sans-serif; font-weight: 400; }
+
+  .banner {
+    position: relative;
+    aspect-ratio: 1350 / 1080;
+    background: var(--plum) url(img/village.png) center / cover no-repeat;
+    overflow: hidden;
+  }
+  .bg-pattern { position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: none; }
+  .banner-art {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 150px;
+    bottom: 0;
+    width: 440px;
+    transform: translateX(-50%);
+  }
+  .banner-title {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+  .banner-title h1 {
+    font-size: clamp(40px, 7vw, 84px);
+    line-height: 1;
+    color: var(--white);
+    text-shadow: 5px 5px 0 var(--plum-deep);
+    transform: skewX(-6deg);
+  }
+  .banner-title .tagline {
+    margin-top: 16px;
+    display: inline-block;
+    font-size: 19px;
+    font-weight: 900;
+    color: var(--plum-deep);
+    background: var(--pop);
+    padding: 8px 14px;
+  }
+  .banner-info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .banner-info div {
+    background: var(--plum-deep);
+    padding: 10px 16px;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .ticket {
+    background: var(--violet);
+    padding: 48px 24px 56px;
+    position: relative;
+    margin-top: -1px;
+  }
+  .ticket .wrap { max-width: 760px; margin: 0 auto; }
+  .ticket .label {
+    font-family: 'Bungee', sans-serif;
+    font-size: 36px;
+    color: var(--pop);
+    margin-bottom: 8px;
+  }
+  .price-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .price-cell { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .ticket .price {
+    font-family: 'Bungee', sans-serif;
+    font-size: 58px;
+    color: var(--white);
+    text-shadow: 4px 4px 0 var(--plum-deep);
+    line-height: 1.1;
+  }
+  .ticket .cap {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .btn {
+    display: inline-block;
+    background: var(--pop);
+    color: var(--plum-deep);
+    font-family: 'Bungee', sans-serif;
+    font-size: 16px;
+    padding: 14px 28px;
+    text-decoration: none;
+  }
+  .includes {
+    margin-top: 24px;
+    background: var(--plum-deep);
+    padding: 22px;
+  }
+  .includes ul { list-style: none; }
+  .includes li {
+    font-size: 16px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--plum);
+  }
+  .includes li:last-child { border-bottom: none; }
+  .includes li b { color: var(--pop); margin-right: 8px; }
+
+  .program {
+    background: var(--plum-deep);
+    padding: 56px 20px;
+  }
+  .program h2 {
+    font-family: 'Bungee', sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    color: var(--pop);
+    margin-bottom: 22px;
+    transform: skewX(-6deg);
+  }
+  .prog {
+    max-width: 760px;
+    margin: 0 auto;
+    list-style: none;
+    display: grid;
+    gap: 8px;
+  }
+  .prog li {
+    background: var(--plum);
+    padding: 14px 18px;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 12px;
+    font-size: 16px;
+  }
+  .prog .t {
+    font-family: 'Bungee', sans-serif;
+    font-size: 17px;
+    color: var(--pop);
+  }
+
+  .sns {
+    background: var(--plum-deep);
+    text-align: center;
+    padding: 20px 20px 28px;
+  }
+  .sns a { display: inline-block; margin: 0 12px; }
+
+  @media (max-width: 560px) {
+    .banner-title h1 { font-size: 52px; }
+    .banner-art { width: 300px; top: 150px; }
+    .ticket .price { font-size: 42px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="banner">
+  <div class="banner-title">
+    <h1 class="display">솔크메크</h1>
+    <div class="tagline">어차피 혼자라면? 메천과 함께 놀자!</div>
+  </div>
+  <div class="banner-info">
+    <div>12월 25일 금요일</div>
+    <div>13:00 — 21:00</div>
+    <div>올댓마인드 문래점</div>
+  </div>
+</header>
+
+<section class="ticket">
+  <div class="wrap">
+    <div class="label">TICKET</div>
+    <div class="price-row">
+      <div class="price-cell">
+        <div class="price">50,000원</div>
+        <div class="cap">(정원 80명)</div>
+      </div>
+      <a class="btn" href="#">신청하기</a>
+    </div>
+    <div class="includes">
+      <ul>
+        <li><b>01</b>바실리스크 랜덤박스 (3~5만 원 상당)</li>
+        <li><b>02</b>메천 크리스마스 한정 푸딩 &amp; 음료</li>
+        <li><b>03</b>메천 한정판 일러스트 카드 + 사인회 &amp; 포토존</li>
+        <li><b>04</b>두근두근 메천 애장품 추첨 &amp; 따뜻한 저녁 만찬</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="program">
+  <h2>Program</h2>
+  <ul class="prog">
+    <li><span class="t">13:00</span><span>웰컴 기프트 &amp; 푸드 제공</span></li>
+    <li><span class="t">14:00</span><span>메천과 함께하는 사인회 &amp; 포토존</span></li>
+    <li><span class="t">17:00</span><span>메천 크리스마스 토크 &amp; 산타 메천의 애장품 나눔</span></li>
+    <li><span class="t">19:00</span><span>라이브 브레이크 (고대박스 대기중)</span></li>
+    <li><span class="t">20:00</span><span>디너 타임 &amp; 메물보 (메천에게 물어보세요)</span></li>
+  </ul>
+</section>
+
+<div class="sns">
+  <a href="https://www.youtube.com/@dittogenius" target="_blank" rel="noopener" aria-label="유튜브">
+    <svg width="40" height="28" viewBox="0 0 40 28" aria-hidden="true">
+      <rect x="0" y="0" width="40" height="28" rx="8" fill="#FFD23F"/>
+      <path d="M16 8 L27 14 L16 20 Z" fill="#1E0F33"/>
+    </svg>
+  </a>
+  <a href="https://www.instagram.com/dittogenius/" target="_blank" rel="noopener" aria-label="인스타그램">
+    <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true">
+      <rect x="2" y="2" width="24" height="24" rx="7" fill="none" stroke="#FFD23F" stroke-width="3"/>
+      <circle cx="14" cy="14" r="5.5" fill="none" stroke="#FFD23F" stroke-width="3"/>
+      <circle cx="21" cy="7" r="1.8" fill="#FFD23F"/>
+    </svg>
+  </a>
+</div>
+
+</body>
+</html>
