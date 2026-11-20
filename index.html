@@ -47,7 +47,7 @@
   }
   .banner-title {
     position: absolute;
-    top: 62%;
+    top: 30%;
     transform: translateY(-50%);
     left: 0;
     right: 0;
@@ -79,6 +79,21 @@
   }
   .banner-top .when { font-size: 15px; font-weight: 700; }
   .banner-top .timer { font-family: 'Bungee', sans-serif; font-size: 22px; color: var(--pop); margin-top: 4px; }
+  .banner-when {
+    position: absolute;
+    left: 0; right: 0; bottom: 24px;
+    display: flex; justify-content: center; align-items: center;
+    gap: 8px; flex-wrap: nowrap;
+  }
+  .banner-when span {
+    background: var(--plum-deep);
+    color: var(--white);
+    padding: 10px 16px;
+    font-size: 16px;
+    font-weight: 900;
+    white-space: nowrap;
+  }
+  .banner-when .d { background: var(--pop); color: var(--plum-deep); }
   .banner-info {
     position: absolute;
     left: 0;
@@ -198,6 +213,8 @@
 
   @media (max-width: 560px) {
     .banner-title h1 { font-size: 52px; }
+    .banner-when { gap: 4px; bottom: 14px; }
+    .banner-when span { font-size: 12px; padding: 7px 8px; }
     .banner-art { width: 300px; top: 150px; }
     .ticket .price { font-size: 42px; }
   }
@@ -210,12 +227,16 @@
     <h1 class="display">솔크메크</h1>
     <div class="tagline">크리스마스에는 혼자였지만 오늘은 메천과 함께 놀자</div>
   </div>
+  <div class="banner-when">
+    <span class="d">12월 26일 토요일</span>
+    <span>13:00 — 21:00</span>
+    <span>신논현점</span>
+  </div>
   <div class="banner-top">
-    <div class="when">12월 26일 토요일 · 13:00 — 21:00 · 올댓마인드 문래점</div>
     <div class="timer" id="timer">D-- 00:00:00</div>
   </div>
     <div>13:00 — 21:00</div>
-    <div>올댓마인드 문래점</div>
+    <div>신논현점</div>
   </div>
 </header>
 
