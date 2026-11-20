@@ -81,19 +81,24 @@
   .banner-top .timer { font-family: 'Bungee', sans-serif; font-size: 22px; color: var(--pop); margin-top: 4px; }
   .banner-when {
     position: absolute;
-    left: 0; right: 0; bottom: 24px;
-    display: flex; justify-content: center; align-items: center;
-    gap: 8px; flex-wrap: nowrap;
-  }
-  .banner-when span {
+    left: 50%; bottom: 24px;
+    transform: translateX(-50%);
+    display: flex; align-items: center;
     background: var(--plum-deep);
     color: var(--white);
-    padding: 10px 16px;
+    padding: 12px 22px;
+    white-space: nowrap;
     font-size: 16px;
     font-weight: 900;
-    white-space: nowrap;
   }
-  .banner-when .d { background: var(--pop); color: var(--plum-deep); }
+  .banner-when .d { color: var(--pop); }
+  .banner-when i {
+    display: inline-block;
+    width: 2px; height: 14px;
+    background: var(--pop);
+    margin: 0 14px;
+    opacity: 0.7;
+  }
   .banner-info {
     position: absolute;
     left: 0;
@@ -213,8 +218,8 @@
 
   @media (max-width: 560px) {
     .banner-title h1 { font-size: 52px; }
-    .banner-when { gap: 4px; bottom: 14px; }
-    .banner-when span { font-size: 12px; padding: 7px 8px; }
+    .banner-when { bottom: 14px; padding: 9px 14px; font-size: 13px; }
+    .banner-when i { margin: 0 8px; }
     .banner-art { width: 300px; top: 150px; }
     .ticket .price { font-size: 42px; }
   }
@@ -228,9 +233,7 @@
     <div class="tagline">크리스마스에는 혼자였지만 오늘은 메천과 함께 놀자</div>
   </div>
   <div class="banner-when">
-    <span class="d">12월 26일 토요일</span>
-    <span>13:00 — 21:00</span>
-    <span>신논현점</span>
+    <span class="d">12월 26일 토요일</span><i></i><span>13:00 — 21:00</span><i></i><span>신논현점</span>
   </div>
   <div class="banner-top">
     <div class="timer" id="timer">D-- 00:00:00</div>
