@@ -31,7 +31,7 @@
 
   .banner {
     position: relative;
-    height: 500px;
+    height: 360px;
     background: var(--plum) url(img/village.png) center / auto 100% no-repeat;
     overflow: hidden;
   }
@@ -45,11 +45,12 @@
     width: 440px;
     transform: translateX(-50%);
   }
+  .title-block {
+    background: var(--plum-deep);
+    text-align: center;
+    padding: 28px 16px 36px;
+  }
   .banner-title {
-    position: absolute;
-    top: 24px;
-    left: 0;
-    right: 0;
     text-align: center;
   }
   .banner-title h1 {
@@ -226,14 +227,17 @@
 <body>
 
 <header class="banner">
-  <div class="banner-title">
-    <h1 class="display">솔크메크</h1>
-    <div class="tagline">크리스마스에는 혼자였지만 오늘은 메천과 함께 놀자</div>
-  </div>
   <div class="banner-when">
     <span class="d">12월 26일 토요일</span><i></i><span>13:00 — 21:00</span><i></i><span>올댓마인드 신논현</span>
   </div>
 </header>
+
+<div class="title-block">
+  <div class="banner-title">
+    <h1 class="display">솔크메크</h1>
+    <div class="tagline">크리스마스에는 혼자였지만 오늘은 메천과 함께 놀자</div>
+  </div>
+</div>
 
 <section class="ticket">
   <div class="wrap">
