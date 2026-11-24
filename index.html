@@ -31,7 +31,7 @@
 
   .banner {
     position: relative;
-    height: 420px;
+    height: 540px;
     background: #9fe3f7 url(img/village.png) center / contain no-repeat;
     overflow: hidden;
   }
@@ -222,22 +222,27 @@
     .banner-art { width: 300px; top: 150px; }
     .ticket .price { font-size: 42px; }
   }
+
+  .banner-title { position: absolute !important; top: 24px !important; left: 0; right: 0; transform: none !important; z-index: 1; }
+  .info-strip { background: var(--plum-deep); padding: 18px 16px; text-align: center; }
+  .info-strip .banner-when { position: static !important; transform: none !important; left: auto !important; bottom: auto !important; display: inline-flex; padding: 0 !important; background: none !important; }
+  .info-strip .banner-when span { padding: 6px 4px; }
 </style>
 </head>
 <body>
 
 <header class="banner">
-  <div class="banner-when">
-    <span class="d">12월 26일 토요일</span><i></i><span>13:00 — 21:00</span><i></i><span>올댓마인드 신논현</span>
-  </div>
-</header>
-
-<div class="title-block">
   <div class="banner-title">
     <h1 class="display">솔크메크</h1>
     <div class="tagline">크리스마스에는 혼자였지만 오늘은 메천과 함께 놀자</div>
   </div>
+</header>
+<div class="info-strip">
+  <div class="banner-when">
+    <span class="d">12월 26일 토요일</span><i></i><span>13:00 — 21:00</span><i></i><span>올댓마인드 신논현 3층</span>
+  </div>
 </div>
+
 
 <section class="ticket">
   <div class="wrap">
